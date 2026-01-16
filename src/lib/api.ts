@@ -2,7 +2,8 @@
  * API Client for KAI Backend
  */
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'; \r\nconst USE_NETLIFY_FUNCTIONS = !process.env.NEXT_PUBLIC_API_URL;
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const USE_NETLIFY_FUNCTIONS = !process.env.NEXT_PUBLIC_API_URL;
 
 export interface ChatRequest {
     session_id: string;
