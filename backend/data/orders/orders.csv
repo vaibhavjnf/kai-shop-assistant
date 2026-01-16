@@ -1,0 +1,3 @@
+session_id,timestamp,items,total,status
+KAI-1768575732041-rke8rlhfv,2026-01-16T20:34:25.461641,"[{""name"": ""Jodhpuri Samosa"", ""quantity"": 2, ""price"": 20.0, ""total"": 40.0}, {""name"": ""Pyaaz Kachori"", ""quantity"": 1, ""price"": 35.0, ""total"": 35.0}]",75.0,completed
+KAI-1768575856781-2ptyzpzoy,2026-01-16T20:35:06.903915,"[{""name"": ""Jodhpuri  Samosa"", ""quantity"": 2, ""price"": 20.0, ""total"": 40.0}, {""name"": ""Pyaaz Kachori"", ""quantity"": 1, ""price"": 35.0, ""total"": 35.0}]",75.0,completed
