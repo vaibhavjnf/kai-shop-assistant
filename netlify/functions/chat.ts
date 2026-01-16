@@ -3,7 +3,6 @@
  * Handles AI conversation with Gemini
  */
 import type { Config, Context } from "@netlify/functions"
-import { GoogleGenAI } from "@anthropic-ai/sdk"
 
 // Menu context - embedded for serverless
 const MENU_CONTEXT = `
