@@ -2,8 +2,14 @@
  * API Client for KAI Backend
  */
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-const USE_NETLIFY_FUNCTIONS = !process.env.NEXT_PUBLIC_API_URL;
+// Smartly determine API_BASE
+// If explicit env var is set, use it.
+// If on localhost client-side, default to python backend port 8000.
+// Otherwise (production/serverless), use relative '/api' path.
+const API_BASE = process.env.NEXT_PUBLIC_API_URL ||
+    (typeof window !== 'undefined' && window.location.hostname === 'localhost'
+        ? 'http://localhost:8000'
+        : '/api');
 
 export interface ChatRequest {
     session_id: string;
@@ -55,7 +61,8 @@ export async function saveOrder(order: {
     total: number;
     status: string;
 }) {
-    const response = await fetch(`${API_BASE}/order/save`, {
+    // Note: Netlify function is at /api/order, not /order/save
+    const response = await fetch(`${API_BASE}/order`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
